@@ -281,7 +281,7 @@ section.hero {
 }
 
 .btn-primary {
-  background: #4f46e5;
+  background: #4f46e5 !important;
   transition: all 0.3s ease-in-out;
 }
 .btn-primary:hover {
@@ -303,4 +303,12 @@ section.login {
 .noty_theme__mint {
   border-radius: 50px !important;
   padding-left: 8px !important;
+}
+
+a.link {
+  color: #4f46e5;
+}
+
+.cart-container {
+  width: 70%;
 }

@@ -26,7 +26,7 @@ function init(passport) {
               return done(null, false, { message: "Something went wrong" });
             });
         } catch (error) {
-          return done(error, false);
+          return done(null, false, { message: "Something went wrong" });
         }
       }
     )
@@ -35,8 +35,8 @@ function init(passport) {
   passport.serializeUser((user, done) => {
     done(null, user._id);
   });
-  passport.deserializeUser((id, done) => {
-    const user = User.findOne({ _id: id });
+  passport.deserializeUser(async (id, done) => {
+    const user = await User.findOne({ _id: id });
     if (user) {
       done(null, user);
     }

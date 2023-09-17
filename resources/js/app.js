@@ -1,4 +1,6 @@
 import axios from "axios";
+import initAdmin from "./admin";
+
 const Noty = require("noty");
 
 const foodBtn = document.querySelectorAll(".add-to-cart");
@@ -33,3 +35,13 @@ foodBtn.forEach((btn) => {
     updateCart(JSON.parse(btn.dataset.food));
   });
 });
+
+// remove order successful message
+const alertMsg = document.querySelector("#success-alert");
+if (alertMsg) {
+  setTimeout(() => {
+    alertMsg.remove();
+  }, 2500);
+}
+
+initAdmin();

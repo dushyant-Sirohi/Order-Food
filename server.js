@@ -30,7 +30,7 @@ app.use(
     secret: process.env.COOKIE_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 1000 * 60 * 15 },
+    cookie: { maxAge: 1000 * 60 * 45 },
     store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/food" }),
   })
 );
@@ -45,7 +45,7 @@ app.use(flash());
 
 app.use(expressLayout);
 app.use(express.static("public"));
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use((req, res, next) => {
   res.locals.session = req.session;

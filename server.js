@@ -30,7 +30,7 @@ app.use(
     secret: process.env.COOKIE_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 1000 * 60 * 45 },
+    cookie: { maxAge: 1000 * 60 * 60 * 12 },
     store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/food" }),
   })
 );
@@ -57,6 +57,6 @@ app.set("view engine", "ejs");
 
 webRoutes(app);
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });

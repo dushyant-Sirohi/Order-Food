@@ -12,8 +12,10 @@ async function initAdmin() {
   });
 
   orders = res.data;
-  markup = generateMarkup(orders);
-  orderTableBody.innerHTML = markup;
+  if (orders && typeof orders == "object" && orderTableBody) {
+    markup = generateMarkup(orders);
+    orderTableBody.innerHTML = markup;
+  }
 
   function renderItems(items) {
     let parsedItems = Object.values(items);

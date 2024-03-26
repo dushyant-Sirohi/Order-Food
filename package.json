@@ -4,7 +4,7 @@
   "description": "This is our food ordering app",
   "main": "index.js",
   "engines": {
-    "node": "18.x"
+    "node": "20.x"
   },
   "scripts": {
     "start": "node server.js",

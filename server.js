@@ -56,7 +56,7 @@ app.set("views", path.join(__dirname, "/resources/views"));
 app.set("view engine", "ejs");
 
 // webRoutes(app);
-app.use('/home', (req, res) => {
+app.get('/home', (req, res) => {
   res.send("Hello World");
 });
 

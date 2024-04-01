@@ -55,7 +55,10 @@ app.use((req, res, next) => {
 app.set("views", path.join(__dirname, "/resources/views"));
 app.set("view engine", "ejs");
 
-webRoutes(app);
+// webRoutes(app);
+app.use('/home', (req, res) => {
+  res.send("Hello World");
+});
 
 const server = app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);

@@ -31,7 +31,7 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: { maxAge: 1000 * 60 * 60 * 12 },
-    store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/food" }),
+    store: MongoStore.create({ mongoUrl: DATABASE_URI }),
   })
 );
 

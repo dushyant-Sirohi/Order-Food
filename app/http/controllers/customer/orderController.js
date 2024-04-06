@@ -1,6 +1,6 @@
 const Order = require("../../../models/order");
 const moment = require("moment");
-const stripe = require("stripe")(process.env.STRIPE_PK);
+const stripe = require("stripe")("sk_test_51Nsdy9Ls04WqLZIQqce5OO8wiTdGMbrQ7hGq0XEzoCeT8cGhyhMCGWG4iyiPE38LE5KLiXoY4ph47HxNzkkbRz4K00kVRtwF1j");
 function orderController() {
   return {
     order(req, res) {

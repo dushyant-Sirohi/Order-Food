@@ -11,7 +11,8 @@ const flash = require("express-flash");
 const MongoStore = require("connect-mongo");
 const passport = require("passport");
 const PORT = process.env.PORT || 3000;
-const DATABASE_URI = process.env.DATABASE_URI || "mongodb://localhost:27017";
+// const DATABASE_URI = process.env.DATABASE_URI || "mongodb://localhost:27017";
+const DATABASE_URI = "mongodb+srv://dushyantsirohi217:1535452@cluster0.hb3o3gi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0" || "mongodb://localhost:27017";
 
 //Database
 try {
@@ -27,7 +28,8 @@ try {
 //Session
 app.use(
   session({
-    secret: process.env.COOKIE_SECRET,
+    // secret: process.env.COOKIE_SECRET,
+    secret: "CatsAndDogs",
     resave: false,
     saveUninitialized: true,
     cookie: { maxAge: 1000 * 60 * 60 * 12 },

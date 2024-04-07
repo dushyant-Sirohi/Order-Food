@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "This is our food ordering app",
   "main": "index.js",
+  "engines":{
+    "node": "16.13.0"
+  },
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
